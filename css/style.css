@@ -17,14 +17,14 @@
   --section-translation-weight: 680;
   --section-body-size: 14px;
   --section-body-weight: 620;
-  --marker-yellow: rgba(223, 255, 0, 0.34);
-  --marker-line-yellow: rgba(223, 255, 0, 0.46);
+  --marker-yellow: rgba(223, 255, 0, 0.18);
+  --marker-line-yellow: rgba(223, 255, 0, 0.26);
   /* ABOUT・PROCESS共通：蛍光ペンの上下位置を統一 */
   --marker-highlight: linear-gradient(
     178deg,
     transparent 20%,
     var(--marker-yellow) 22%,
-    rgba(223, 255, 0, 0.26) 82%,
+    rgba(223, 255, 0, 0.12) 82%,
     transparent 85%
   );
 }
@@ -465,7 +465,7 @@ body.menu-open {
   .hero {
     height: calc(100svh - var(--header-height) - var(--footer-height));
     min-height: 24rem;
-    max-height: 41.875rem;
+    max-height: none;
     aspect-ratio: auto;
   }
 }
@@ -598,10 +598,8 @@ body.menu-open {
   }
 
   .hero {
-    height: min(
-      41.875rem,
-      calc(100svh - var(--header-height) - var(--footer-height))
-    );
+    height: calc(100svh - var(--header-height) - var(--footer-height));
+    max-height: none;
   }
 
   .speaker-detail-grid {
@@ -628,7 +626,7 @@ body.menu-open {
   .hero {
     height: calc(100svh - var(--header-height) - var(--footer-height));
     min-height: 24rem;
-    max-height: 32rem;
+    max-height: none;
     padding: 0;
   }
 
@@ -3606,6 +3604,14 @@ small {
   .practice-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .footer-brand {
+    font-size: 0.6875rem;
+  }
+
+  .footer-note {
+    font-size: 0.625rem;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -3664,6 +3670,7 @@ small {
   .footer-note {
     width: 100%;
     margin-left: 0;
+    font-size: 0.5625rem;
     text-align: center;
   }
 
