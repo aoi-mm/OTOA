@@ -460,6 +460,16 @@ body.menu-open {
   }
 }
 
+/* 狭いウィンドウや縮小プレビューでもヒーローの高さを確保 */
+@media screen and (max-width: 1280px) {
+  .hero {
+    height: calc(100svh - var(--header-height) - var(--footer-height));
+    min-height: 24rem;
+    max-height: 41.875rem;
+    aspect-ratio: auto;
+  }
+}
+
 /* ========================================
    Tablet: 1024px以下
 ======================================== */
@@ -616,10 +626,9 @@ body.menu-open {
   }
 
   .hero {
-    height: auto;
-    min-height: 0;
-    max-height: none;
-    aspect-ratio: 16 / 9;
+    height: calc(100svh - var(--header-height) - var(--footer-height));
+    min-height: 24rem;
+    max-height: 32rem;
     padding: 0;
   }
 
