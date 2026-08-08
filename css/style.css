@@ -155,7 +155,7 @@ body.menu-open {
 
 .navigation-left a::after {
   position: absolute;
-  bottom: -0.65rem;
+  bottom: 5px;
   left: 50%;
   width: 0.45rem;
   height: 0.45rem;
