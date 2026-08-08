@@ -17,14 +17,14 @@
   --section-translation-weight: 680;
   --section-body-size: 14px;
   --section-body-weight: 620;
-  --marker-yellow: rgba(223, 255, 0, 0.18);
-  --marker-line-yellow: rgba(223, 255, 0, 0.26);
+  --marker-yellow: rgba(223, 255, 0, 0.34);
+  --marker-line-yellow: rgba(223, 255, 0, 0.42);
   /* ABOUT・PROCESS共通：蛍光ペンの上下位置を統一 */
   --marker-highlight: linear-gradient(
     178deg,
     transparent 20%,
     var(--marker-yellow) 22%,
-    rgba(223, 255, 0, 0.12) 82%,
+    rgba(223, 255, 0, 0.24) 82%,
     transparent 85%
   );
 }
@@ -565,6 +565,8 @@ body.menu-open {
 
   .navigation-right {
     display: flex;
+    justify-content: flex-end;
+    width: 100%;
     gap: 0;
     margin-top: 1rem;
   }
@@ -3588,6 +3590,14 @@ small {
 }
 
 @media screen and (max-width: 1024px) {
+  .navigation .navigation-right {
+    align-self: flex-end;
+    justify-content: flex-end;
+    width: auto;
+    margin-left: auto;
+    gap: 0.25rem;
+  }
+
   .works-page-index,
   .flow-page,
   .project-page,
