@@ -1,0 +1,25 @@
+[
+  {
+    "title": "Wood and Light Residence",
+    "category": "INTERIOR",
+    "image": "../assets/topwork01.png",
+    "images": [
+      "../assets/topwork01.png",
+      "../assets/work-interior.webp"
+    ],
+    "href": "./interior/index.html",
+    "description": "Timber-led residence design combining warm wood and natural light."
+  },
+  {
+    "title": "Wood Speaker 01",
+    "category": "SPEAKER",
+    "image": "../assets/work-speaker.webp",
+    "images": [
+      "../assets/work-speaker.webp",
+      "../assets/top.png",
+      "../assets/ヒーローセクション02.png"
+    ],
+    "href": "./speaker/index.html",
+    "description": "Handcrafted wooden speaker with natural finish."
+  }
+]

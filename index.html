@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="OTOAは、内装工事を軸に、空間に馴染む木製スピーカーも制作しています。"
+    />
+    <title>OTOA — Interior / Speaker / Music</title>
+
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css?v=20260803-77" />
+  </head>
+
+  <body>
+    <!-- Header: ロゴと各ページへのナビゲーション -->
+    <header class="header">
+      <a class="logo" href="./index.html" aria-label="トップページ">OTOA</a>
+
+      <button
+        class="menu-button"
+        type="button"
+        aria-expanded="false"
+        aria-controls="global-navigation"
+      >
+        <span>MENU</span>
+        <span class="menu-icon" aria-hidden="true"></span>
+      </button>
+
+      <nav id="global-navigation" class="navigation" aria-label="メインメニュー">
+        <div class="navigation-left">
+          <a href="./about/index.html">ABOUT</a>
+          <a href="./work/index.html">WORK</a>
+          <a href="./process/index.html">PROCESS</a>
+          <a href="./contact/index.html">CONTACT</a>
+        </div>
+        <div class="navigation-right">
+          <a class="instagram-link" href="https://www.instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
+            <span class="instagram-icon" aria-hidden="true"></span>
+          </a>
+          <a class="soundcloud-link" href="https://soundcloud.com/" target="_blank" rel="noreferrer" aria-label="SoundCloud">
+            <svg class="soundcloud-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 12a4 4 0 014-4c.2 0 .4 0 .6.05A6 6 0 1119 14H7a4 4 0 01-4-2z"></path>
+            </svg>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero: OTOAの空間とスピーカーを写真だけで見せるスライダー -->
+    <main class="hero">
+      <div class="slider" aria-label="OTOAイメージ写真">
+        <div class="slide is-active">
+          <img
+            src="./assets/interior-02.png"
+            alt="本棚と木のカウンターがある内装空間"
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="./assets/interior-01.png"
+            alt="障子と赤い壁、木製収納がある住宅のリビング"
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="./assets/interior-03.png"
+            alt="自然光と木製収納が調和する住宅のリビング"
+          />
+        </div>
+
+        <button class="slider-button slider-prev" type="button" aria-label="前の写真">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M16 5 L7 12 L16 19 Z"></path>
+          </svg>
+        </button>
+        <button class="slider-button slider-next" type="button" aria-label="次の写真">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8 5 L17 12 L8 19 Z"></path>
+          </svg>
+        </button>
+
+        <div class="slider-dots" aria-label="写真を選択">
+          <button class="slider-dot is-active" type="button" aria-label="写真1を表示"></button>
+          <button class="slider-dot" type="button" aria-label="写真2を表示"></button>
+          <button class="slider-dot" type="button" aria-label="写真3を表示"></button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer: 全ページ共通のコピーライトとSNSリンク -->
+    <footer class="page-footer">
+      <a href="./index.html">© OTOA</a>
+    </footer>
+
+    <script src="./js/main.js?v=20260803-02"></script>
+  </body>
+</html>
