@@ -17,13 +17,15 @@
   --section-translation-weight: 680;
   --section-body-size: 14px;
   --section-body-weight: 620;
+  --marker-yellow: rgba(223, 255, 0, 0.34);
+  --marker-line-yellow: rgba(223, 255, 0, 0.46);
   /* ABOUT・PROCESS共通：蛍光ペンの上下位置を統一 */
   --marker-highlight: linear-gradient(
-    to bottom,
-    transparent 18%,
-    #dfff00 18%,
-    #dfff00 88%,
-    transparent 88%
+    178deg,
+    transparent 20%,
+    var(--marker-yellow) 22%,
+    rgba(223, 255, 0, 0.26) 82%,
+    transparent 85%
   );
 }
 
@@ -708,15 +710,39 @@ body.menu-open {
 
 .page-footer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: var(--footer-height);
-  padding: 0 1.5rem;
+  width: min(calc(100% - clamp(6rem, 14vw, 12rem)), 72rem);
+  min-height: var(--footer-height);
+  height: auto;
+  gap: 0.65rem;
+  padding: 1.25rem 0;
   color: var(--color-black);
   background: var(--color-white);
   font-size: 0.75rem;
   font-weight: 600;
+}
+
+.footer-brand {
+  flex: 0 0 auto;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.footer-note {
+  margin-left: 0;
+  color: #686868;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-align: center;
+  line-height: 1.45;
+}
+
+.footer-note p + p {
+  margin-top: 0.2rem;
 }
 
 .page-footer a {
@@ -1915,7 +1941,7 @@ body.menu-open {
   background: linear-gradient(
     to bottom,
     transparent calc(100% - 4px),
-    #dfff00 calc(100% - 4px)
+    var(--marker-line-yellow) calc(100% - 4px)
   );
 }
 
@@ -2123,7 +2149,7 @@ body.menu-open {
   .sub-page main.page-container,
   .page-footer {
     /* タブレット：メイン・フッターの共通フレーム */
-    width: calc(100% - var(--site-gutter-total));
+    width: calc(100% - clamp(3rem, 10vw, 6rem));
   }
 }
 
@@ -2309,7 +2335,7 @@ body.menu-open {
   width: 5rem;
   height: 4px;
   margin-top: 1rem;
-  background: #dfff00;
+  background: var(--marker-line-yellow);
   content: "";
 }
 
@@ -2388,7 +2414,7 @@ body.menu-open {
   background: linear-gradient(
     to bottom,
     transparent calc(100% - 4px),
-    #dfff00 calc(100% - 4px)
+    var(--marker-line-yellow) calc(100% - 4px)
   );
 }
 
@@ -2897,7 +2923,7 @@ body.menu-open {
   width: 72px;
   height: 4px;
   margin-top: 24px;
-  background: #dfff00;
+  background: var(--marker-line-yellow);
   content: "";
 }
 
@@ -2947,7 +2973,7 @@ body.menu-open {
 
 .project-heading p {
   display: inline-block;
-  border-bottom: 4px solid #dfff00;
+  border-bottom: 4px solid var(--marker-line-yellow);
   font-size: 16px;
   font-weight: 700;
   line-height: 1.15;
@@ -3082,7 +3108,7 @@ body.menu-open {
   width: 72px;
   height: 4px;
   margin-top: 24px;
-  background: #dfff00;
+  background: var(--marker-line-yellow);
 }
 
 .speaker-meta {
@@ -3577,9 +3603,12 @@ small {
   .page-container,
   .sub-page main.page-container,
   .header,
-  .page-footer,
   .about-page {
     width: calc(100% - var(--site-gutter-total));
+  }
+
+  .page-footer {
+    width: calc(100% - clamp(3.5rem, 9vw, 4.5rem));
   }
 
   .works-page-index,
@@ -3617,6 +3646,18 @@ small {
 }
 
 @media screen and (max-width: 480px) {
+  .page-footer {
+    align-items: center;
+    width: calc(100% - 4rem);
+    gap: 0.75rem;
+  }
+
+  .footer-note {
+    width: 100%;
+    margin-left: 0;
+    text-align: center;
+  }
+
   .speaker-next {
     grid-template-columns: 1fr;
     gap: 12px;
