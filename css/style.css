@@ -614,9 +614,10 @@ body.menu-open {
   }
 
   .hero {
-    height: calc(100svh - var(--header-height) - var(--footer-height));
-    min-height: 24rem;
-    max-height: 32rem;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    aspect-ratio: 16 / 9;
     padding: 0;
   }
 
@@ -3300,9 +3301,12 @@ body.menu-open {
 }
 
 .speaker-next a {
-  display: inline-flex;
+  display: inline-grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
   gap: 12px;
   align-items: center;
+  min-height: 44px;
   color: inherit;
   text-decoration: none;
 }
@@ -3314,15 +3318,16 @@ body.menu-open {
 .speaker-next small {
   display: block;
   color: #aaa9a7;
-  line-height: 22px;
+  line-height: 1;
 }
 
 .speaker-next span {
-  position: relative;
-  top: -1px;
-  display: block;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
   font-size: 22px;
-  line-height: 22px;
+  line-height: 1;
   font-weight: 400;
   transition: transform 180ms ease;
 }
@@ -3518,5 +3523,115 @@ body.menu-open {
     padding-right: 0;
     padding-left: 0;
     scroll-margin-top: 24px;
+  }
+}
+
+/* ========================================
+   全ページ共通：レスポンシブの最終調整
+======================================== */
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+main,
+section,
+article,
+figure,
+.page-container > * {
+  min-width: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+dt,
+dd,
+a,
+small {
+  overflow-wrap: anywhere;
+}
+
+@media screen and (max-width: 1024px) {
+  .works-page-index,
+  .flow-page,
+  .project-page,
+  .project-detail-page,
+  .speaker-detail-page {
+    padding-right: clamp(0px, 3vw, 32px);
+    padding-left: clamp(0px, 3vw, 32px);
+  }
+
+  .about-page {
+    width: calc(100% - var(--site-gutter-total));
+  }
+
+  .practice-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .page-container,
+  .sub-page main.page-container,
+  .header,
+  .page-footer,
+  .about-page {
+    width: calc(100% - var(--site-gutter-total));
+  }
+
+  .works-page-index,
+  .flow-page,
+  .project-page,
+  .project-detail-page,
+  .speaker-detail-page {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .practice-list {
+    grid-template-columns: 1fr;
+  }
+
+  .works-mobile-jump {
+    padding-left: 0;
+  }
+
+  .speaker-next {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .speaker-next a {
+    width: 100%;
+  }
+
+  .speaker-next a + a {
+    justify-content: end;
+    padding-top: 0;
+    border-top: 0;
+    text-align: right;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .speaker-next {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .speaker-next a + a {
+    justify-content: start;
+    padding-top: 12px;
+    border-top: 1px solid #d7d7d7;
+    text-align: left;
+  }
+
+  .contact-submit,
+  .flow-contact-button {
+    width: 100%;
+    min-height: 44px;
   }
 }
